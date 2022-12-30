@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Valheim</title>
+    <link href="{{ url_for('static', filename='/valheim.css')}}" type="text/css" rel="stylesheet">
+</head>
+<body>
+    <h1 class="title">Valheim Server Status</h1>
+    <table class="status-conatiner">
+        <tr>
+            <td>Server State</td> 
+            <td class="second {% if state['State'] == 'OK' %}
+                ok
+                {% elif state['State'] == 'Warning issues imminent' %}
+                warning
+                {% elif state['State'] == 'Critical Issue' %}
+                critical
+                {% endif %}">{{state["State"]}}</td> 
+        </tr>
+        <tr>
+            <td>Valheim Host Up</td> 
+            <td class="second {% if state['Valheim Host Up'] == False %}
+            critical
+            {% else %}
+            ok
+            {% endif %}">{{state["Valheim Host Up"]}}</td> 
+        </tr>
+        <tr>
+            <td>Valheim Running</td> 
+            <td class="second {% if state['Valheim Running'] != True %}
+            critical
+            {% else %}
+            ok
+            {% endif %}">{{state["Valheim Running"]}}</td> 
+        </tr>
+        <tr>
+            <td>Low on Diskspace</td> 
+            <td class="second {% if state['Low on Diskspace'] != False %}
+            warning
+            {% else %}
+            ok
+            {% endif %}">{{state["Low on Diskspace"]}}</td> 
+        </tr>
+        <tr>
+            <td>Valheim Version</td> 
+            <td class="second {% if state['Valheim Version'] == '???' %}
+            warning
+            {% endif %}">{{state["Valheim Version"]}}</td> 
+        </tr>
+    </table>
+
+    <div class="messages">
+        <p>DON'T PANIC</p> 
+        <p>Visit /api to view a JSON serialisation of this data</p>
+    </div>
+</html>

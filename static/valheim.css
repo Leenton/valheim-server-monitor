@@ -1,0 +1,52 @@
+/* latin */
+@font-face {
+    font-family: 'Inconsolata';
+    font-style: normal;
+    font-weight: 400;
+    font-stretch: 100%;
+    src: url(https://fonts.gstatic.com/s/inconsolata/v31/QldgNThLqRwH-OJ1UHjlKENVzkWGVkL3GZQmAwLYxYWI2qfdm7Lpp4U8WR32kXWdycuJDA.woff) format('woff');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+  
+body{
+    font-family: Inconsolata;
+    font-size: 2rem;
+}
+
+h1{
+    margin-top: 5%;
+    text-align: center;
+}
+
+.status-conatiner{
+    margin-top: 5%;
+    margin-left: auto;
+    margin-right: auto;
+}
+td{
+    padding: 1rem;
+}
+
+td.critical{
+    background-color: rgba(204, 51, 0, 0.9);
+}
+td.warning{
+    background-color: rgba(255, 181, 0, 0.9);
+}
+td.ok{
+    background-color: rgba(153, 204, 51, 0.9);
+}
+
+td.second{
+    text-align: center;
+    min-width: 20rem;
+}
+
+p{
+    text-align: right;
+}
+.messages{
+    position: fixed;
+    bottom: 0;
+    right: 1rem; 
+}
